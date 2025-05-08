@@ -1,6 +1,5 @@
 import { Elysia } from 'elysia';
-import { whatsappController } from '../services/whatsapp.service';
-import otp from '../models/otp';
+import { sendOTP, verifyOTP } from '../services/whatsapp.otp.service';
 
 const otpRoutes = new Elysia({ prefix: '/otp' })
    .post('/send', async ({ body }) => {
@@ -13,7 +12,19 @@ const otpRoutes = new Elysia({ prefix: '/otp' })
             };
         }
 
-        return await whatsappController.sendWhatsAppOtp(phoneNumber, otp);
+        try {
+            const result = await sendOTP(phoneNumber);
+            return {
+                success: true,
+                message: 'OTP sent successfully',
+                data: result
+            };
+        } catch (error) {
+            return {
+                success: false,
+                message: error instanceof Error ? error.message : 'Unknown error'
+            };
+        }
     })
     .post('/verify', async ({ body }) => {
         const { phoneNumber, otp } = body as { phoneNumber: string; otp: string };
@@ -22,7 +33,21 @@ const otpRoutes = new Elysia({ prefix: '/otp' })
             throw new Error('Phone number and OTP are required');
         }
 
-        return await whatsappController.verifyOtp(phoneNumber, otp);
+        try {
+            const result = await verifyOTP(phoneNumber, otp);
+            return {
+                success: true,
+                message: 'OTP verified successfully',
+                data: result
+            };
+        } catch (error) {
+            return {
+                success: false,
+                message: error instanceof Error ? error.message : 'Unknown error'
+            };
+        }
     });
 
 export default otpRoutes;
+
+

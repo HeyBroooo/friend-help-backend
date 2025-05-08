@@ -1,6 +1,3 @@
-2025/05/08-12:24:12.386 347c Reusing MANIFEST C:\Users\mohit\Desktop\friend-help-backend\.wwebjs_auth\session\Default\Local Storage\leveldb/MANIFEST-000001
-2025/05/08-12:24:12.387 347c Recovering log #3
-2025/05/08-12:24:12.394 347c Reusing old log C:\Users\mohit\Desktop\friend-help-backend\.wwebjs_auth\session\Default\Local Storage\leveldb/000003.log 
-2025/05/08-12:26:13.491 32c8 Level-0 table #5: started
-2025/05/08-12:26:13.497 32c8 Level-0 table #5: 19385 bytes OK
-2025/05/08-12:26:13.498 32c8 Delete type=0 #3
+2025/05/08-21:17:22.116 34bc Reusing MANIFEST C:\Users\mohit\Desktop\friend-help-backend\.wwebjs_auth\session\Default\Local Storage\leveldb/MANIFEST-000001
+2025/05/08-21:17:22.131 34bc Recovering log #4
+2025/05/08-21:17:22.132 34bc Reusing old log C:\Users\mohit\Desktop\friend-help-backend\.wwebjs_auth\session\Default\Local Storage\leveldb/000004.log 
